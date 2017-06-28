@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  cron:
+    build: .
+    image: jcgruenhage/cron
+    volumes:
+      - ./exampleConfig:/config:z

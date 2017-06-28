@@ -1,0 +1,10 @@
+scripts:
+  - name: "helloWorldOne"
+    recurrence: "15min"
+    commands:
+      - "echo \"Hello World!|Often\""
+
+  - name: "helloWorldTwo"
+    recurrence: "hourly"
+    commands:
+      - "echo \"Hello World!|Less often\""
