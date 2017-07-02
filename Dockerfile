@@ -5,6 +5,7 @@ RUN     apk add --update \
             go \
             git \
             build-base \
+	    wget \
         && mkdir /tmp/gopath \
         && export GOPATH=/tmp/gopath \
         && go get git.jcg.re/jcgruenhage/alpine-cron-scheduler \
