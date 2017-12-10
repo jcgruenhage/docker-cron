@@ -1,4 +1,11 @@
 #!/bin/sh
 s6-svc -O /etc/s6.d/cronGen
-echo "Regenerating cronjobs based on config file."
-exec alpine-cron-scheduler /config/cron.yaml
+
+CONFIGFILE="/config/cron.yaml"
+
+if [[ -e "$CONFIGFILE" ]]; then
+	echo "INFO Regenerating cronjobs based on config file."
+	exec alpine-cron-scheduler ${CONFIGFILE}
+elif [[ ! -e "$CONFIGFILE" ]]; then
+	echo "INFO $CONFIGFILE not found, skipping generation of cron jobs from configuration file"
+fi;
